@@ -1,5 +1,5 @@
 //This Will Be Apps.js
- const app = new Game();
+ //const app = new Game();
 
 const phrases = [
 "Tales from The Crypt ",
