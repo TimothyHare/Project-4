@@ -1,5 +1,6 @@
 //This Will Be Apps.js
- //const app = new Game();
+
+ const app = new Game();
 
 const phrases = [
 "Tales from The Crypt ",
@@ -26,13 +27,13 @@ event.target.classList.add("chosen");
 //Add an event listener to the "Start Game" button which calls the resetDisplay() function, creates a new Game object, and starts the game.
 $("#btn__reset").on("click", () => {
   resetDisplay();
-  game.startGame();
+  app.startGame();
 });
 
 //Add event listeners to each of the keyboard buttons, so that clicking a button calls the markButton() function.
 addEventListener("click", (event) => {
   if (event.target.tagName === "button"){
     markButton();
-    game.handleInteraction(event);
+    app.handleInteraction(event);
   }
 });
