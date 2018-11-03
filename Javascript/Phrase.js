@@ -6,10 +6,11 @@ class Phrase {
   constructor(phrase) {
     this.phrase = phrase;
   }
-};
 
   //Adds letter placeholder to display when game begins
   addPhraseToDisplay(){
 
 
   }
+
+}
