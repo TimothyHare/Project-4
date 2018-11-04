@@ -1,13 +1,12 @@
 //This Will Be Game.js
 class Game {
-  constructor(game, missed, phrases){
-    this.game = game;
+  constructor( missed, phrases){
     this.missed = missed;
     this.phrases = phrases;
   }
 
   getRandomPhrase() {
-    const randomPhrase = phrases(Math.random() * phrases.length);
+    const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
     return randomPhrase.toLowerCase().split("");
   }
 
@@ -29,7 +28,7 @@ class Game {
     if (this.missed === 5){
       return false;
     }else {
-      retrun true;
+      return true;
     }
   }
 
@@ -48,7 +47,7 @@ class Game {
     }
     startGame() {
       this.missed = 0;
-      let gamePhrase = this.getRandomphrase();
-      new Phrase(gamePhrase).addPhraseToDisplay()
+      let gamePhrases = this.getRandomPhrase();
+      new Phrase(gamePhrases).addPhraseToDisplay()
     }
   }

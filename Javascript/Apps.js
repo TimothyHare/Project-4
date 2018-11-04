@@ -1,7 +1,5 @@
 //This Will Be Apps.js
 
- const app = new Game();
-
 const phrases = [
 "Tales from The Crypt ",
 "American Horror Story",
@@ -9,6 +7,8 @@ const phrases = [
 "Are You Afraid of the Dark",
 "Happy Halloween"
 ];
+
+const app = new Game(0, phrases);
 
 //hide screen overlay
 function resetDisplay(){
