@@ -32,7 +32,7 @@ $("#btn__reset").on("click", () => {
 
 //Add event listeners to each of the keyboard buttons, so that clicking a button calls the markButton() function.
 window.addEventListener("click", (event) => {
-  if (event.target.tagName === "button"){
+  if (event.target.tagName === "BUTTON"){
     markButton();
     app.handleInteraction(event);
   }
