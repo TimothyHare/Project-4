@@ -1,4 +1,6 @@
 //This Will Be Game.js
+const phrase = new Phrase();
+
 class Game {
   constructor( missed, phrases){
     this.missed = missed;
@@ -12,7 +14,7 @@ class Game {
 
   handleInteraction(letter){
     phrase.checkLetter(letter);
-    $("qwerty button").on("click", () => {
+    $("#qwerty button").on("click", () => {
       phrase.showMatchedLetter(letter);
     })
   }
@@ -35,7 +37,7 @@ class Game {
   // method shows a message if the game is won or lost
   gameOver(){
     const endMess = $("#game-over-message")
-    const overlay = $("overlay")
+    const overlay = $("#overlay")
 
     if (this.checkForWin() = true) {
       endMess.text("Victory Is Yours");

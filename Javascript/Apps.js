@@ -10,6 +10,7 @@ const phrases = [
 
 const app = new Game(0, phrases);
 
+
 //hide screen overlay
 function resetDisplay(){
   $("#overlay").hide();
