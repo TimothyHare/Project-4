@@ -8,17 +8,16 @@ const phrases = [
 "Happy Halloween"
 ];
 
-const app = new Game(0, phrases);
-
+const app = new Game (0, phrases);
 
 //hide screen overlay
 function resetDisplay(){
-  $("#overlay").hide();
+  $("#overlay").remove();
 }
 
 //markButton(): this function is called when a player selects a letter.
 //It disables the button on the onscreen keyboard and calls the handleInteraction() method of the Game class.
-function markButton (){
+function markButton( ){
   $("#qwerty button").on("click", (event) => {
 event.target.disabled = true;
 event.target.classList.add("chosen");

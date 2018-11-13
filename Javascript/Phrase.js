@@ -7,9 +7,9 @@ class Phrase {
   };
 
   //Adds letter placeholder to display when game begins
-  addPhraseToDisplay(){
-const listOfPhrases = document.querySelector("#phrase ul");
-const textOfPhrase = this.phrase;
+addPhraseToDisplay(){
+  const listOfPhrases = document.querySelector("#phrase ul");
+  const textOfPhrase = this.phrase;
 
 textOfPhrase.forEach(phraseLetter => {
   const li = document.createElement("li");
@@ -29,7 +29,7 @@ checkLetter(letter) {
     }
   }
   return start;
-  
+
 }
 showMatchedLetter(){
   document.querySelectorAll(".letter").forEach( letter =>{
