@@ -1,10 +1,9 @@
 //This Will Be Game.js
-const phrase = new Phrase();
 
 class Game {
-  constructor( missed, phrases){
+  constructor( missed, phrase){
     this.missed = missed;
-    this.phrases = phrases;
+    this.phrase =  new Phrase;
   }
 
   getRandomPhrase() {
@@ -13,9 +12,9 @@ class Game {
   }
 
   handleInteraction(letter){
-    phrase.checkLetter(letter);
+    this.phrase.checkLetter(letter);
     $("#qwerty button").on("click", () => {
-      phrase.showMatchedLetter(letter);
+      this.phrase.showMatchedLetter(letter);
     })
   }
 
@@ -47,7 +46,7 @@ class Game {
       overlay.show().addClass("lose")
       }
     }
-    
+
     startGame() {
       this.missed = 0;
       let gamePhrases = this.getRandomPhrase();
