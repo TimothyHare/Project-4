@@ -33,7 +33,7 @@ checkLetter(letter) {
 }
 showMatchedLetter(click){
   document.querySelectorAll(".letter").forEach( letter =>{
-    if (click.textContent === letter.textContent){
+    if (click === letter){
       letter.classList.add("show");
       letter.classList.remove("hide");
     }

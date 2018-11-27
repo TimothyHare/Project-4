@@ -12,10 +12,12 @@ class Game {
   }
 
   handleInteraction(letter){
-    this.phrase.checkLetter(letter);
-    $("#qwerty button").on("click", () => {
+  if   (this.phrase.checkLetter(letter)){
       this.phrase.showMatchedLetter(letter);
-    })
+      this.checkForWin();
+    } else {
+      this.removeLife();
+    }
   }
 
 //This methods removes a heart from the board, it removes a life, and will end the game when the player is out of lives.
@@ -28,7 +30,7 @@ class Game {
   checkForWin() {
     if (this.missed === 5){
       return false;
-    } else {
+    } else if (this.missed < 5) {
       return true;
     }
   }
