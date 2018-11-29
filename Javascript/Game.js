@@ -18,6 +18,11 @@ class Game {
     } else {
       this.removeLife();
     }
+    if (this.missed === 5){
+      return false;
+    } else if (this.missed < 5) {
+      return true;
+    }
   }
 
 //This methods removes a heart from the board, it removes a life, and will end the game when the player is out of lives.
@@ -28,10 +33,10 @@ class Game {
 
   //this methods checks to see if the correct letters are chosen.
   checkForWin() {
-    if (this.missed === 5){
-      return false;
-    } else if (this.missed < 5) {
-      return true;
+    if (this.missed === phrases.length){
+      this.removeLife();
+    } else if (phrases.length === this.phrase.checkLetter()) {
+      this.phrase.showMatchedLetter();
     }
   }
 
