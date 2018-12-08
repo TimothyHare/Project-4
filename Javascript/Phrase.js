@@ -8,35 +8,32 @@ class Phrase {
 
   //Adds letter placeholder to display when game begins
 addPhraseToDisplay(){
-  const listOfPhrases = document.querySelector("#phrase ul");
-  const textOfPhrase = this.phrase;
-
-textOfPhrase.forEach(phraseLetter => {
+  //displays board for game
+const keyBoard = document.getElementById("phrase");
+// Variable for the letter of the phrases
+const keyButtons = document.getElementById("qwerty";
+// Array Iteration for the letters of the phrases
+keyButtons.forEach(key => {
+  // create list item
   const li = document.createElement("li");
-  listOfPhrases.appendChild(li);
-  li.setAttribute("class", "hide");
-  li.textContent = phraseLetter;
-  return phraseLetter !== " " ? li.className = "letter" : li.className = "space";
+  //if statement for key that belongs in a space
+  if (key === " ") {
+    li.className = "hide space";
+  // else hide the key
+}else{
+  li.className =`hide letter ${key}`;
+  li.textContent = key;
+}
+// Append list item to unordered list on the keyBoard
+keyBoard.firstElementChild.appendChild(li);
 });
-  }
+}
 //checkLetter(): checks to see if letter selected by player matches a letter in the phrase.
-checkLetter(letter) {
-  let start = false;
-  const move = $(".letter");
-  for (let i = 0; i < move.length; i+=1){
-    if (letter === move[i]) {
-      start = true;
-    }
-  }
-  return start;
+checkLetter(event) {
+// give letters thier own boxes
 
 }
-showMatchedLetter(click){
-  document.querySelectorAll(".letter").forEach( letter =>{
-    if (click === letter){
-      letter.classList.add("show");
-      letter.classList.remove("hide");
-    }
-  });
+showMatchedLetter(){
+
 }
 }
