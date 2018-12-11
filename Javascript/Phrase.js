@@ -11,7 +11,7 @@ addPhraseToDisplay(){
   //displays board for game
 const keyBoard = document.getElementById("phrase");
 // Variable for the letter of the phrases
-const keyButtons = document.getElementById("qwerty";
+const keyButtons = document.getElementById("qwerty");
 // Array Iteration for the letters of the phrases
 keyButtons.forEach(key => {
   // create list item
@@ -30,7 +30,7 @@ keyBoard.firstElementChild.appendChild(li);
 }
 //checkLetter(): checks to see if letter selected by player matches a letter in the phrase.
 checkLetter(event) {
-// give letters thier own boxes
+
 
 }
 showMatchedLetter(){

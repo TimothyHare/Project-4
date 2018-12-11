@@ -13,25 +13,27 @@ class Game {
     "Happy Halloween"
     ];
     // phrase object that's currently in play
-    this.activePhrase =  null;
+    this.phrase = this.createPhrase();
   }
 
 // cretaes phrases for use in game
   createPhrase() {
     //generates random phrase for player to guess
     const phraseGenerator = this.getRandomPhrase();
-    console.log(phraseGenerator)
     // returns generated random phrase
-      return this.phraseGenerator;
+      return new Phrase(phraseGenerator);
+      console.log(phraseGenerator)
   }
 
   getRandomPhrase() {
     //selects random phrase from phrases property
     const randomPhrase = Math.floor(Math.random() * this.phrases.length);
-    return randomPhrase.toLowerCase().split("");
+    return this.phrases[randomPhrase];
+
   }
 
-  handleInteraction(letter){
+  handleInteraction(event){
+    
 
   }
 
@@ -60,11 +62,12 @@ class Game {
       endMess.text("Better Luck Next Time, Champ");
       overlay.show().addClass("lose")
       }
+
+
     }
 
     startGame() {
-      this.missed = 0;
-      let gamePhrases = this.getRandomPhrase();
-      new Phrase(gamePhrases).addPhraseToDisplay()
+      //Adds random phrase to display
+      this.phrase.addPhraseToDisplay();
     }
   }
