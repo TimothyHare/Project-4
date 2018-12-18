@@ -11,7 +11,7 @@ addPhraseToDisplay(){
   //displays board for game
 const keyBoard = document.getElementById("phrase");
 // Variable for the letter of the phrases
-const keyButtons = document.getElementById("qwerty");
+const keyButtons = [...this.phrase];
 // Array Iteration for the letters of the phrases
 keyButtons.forEach(key => {
   // create list item

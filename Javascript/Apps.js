@@ -1,11 +1,9 @@
 //This Will Be Apps.js
-// variable set to nothing now but will eventually initialize the new game object
-var app;
 
 //event listener for the start game button
 $("#btn__reset").on("click", (event)=>{
-  //variable is now initializing the new Game object
-  var app = new Game;
+  //variable initializing the new Game object
+  const app = new Game;
   // call resetDisplay
   resetDisplay();
   // Start game button
@@ -22,7 +20,7 @@ function resetDisplay(){
 function markButton( ){
   $("#qwerty button").on("click", (event) => {
 event.target.disabled = true;
-app.handleInteraction(event.target.innerText)
+app.handleInteraction(event)
 });
 }
 
