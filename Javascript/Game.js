@@ -20,9 +20,10 @@ class Game {
   createPhrase() {
     //generates random phrase for player to guess
     const phraseGenerator = this.getRandomPhrase();
+    console.log( phraseGenerator)
     // returns generated random phrase
       return new Phrase(phraseGenerator);
-      console.log(phraseGenerator)
+
   }
 
   getRandomPhrase() {

@@ -30,10 +30,27 @@ keyBoard.firstElementChild.appendChild(li);
 }
 //checkLetter(): checks to see if letter selected by player matches a letter in the phrase.
 checkLetter(event) {
+  //get letter from clicking
+  let letter;
+  if (event.type === "click") {
+    letter = event.target.textContext;
+  }
+
+  // variable for phrase letters
+  const keyButtons = [...this.phrase]
+  // Credit: https://stackoverflow.com/questions/20798477/how-to-find-index-of-all-occurrences-of-element-in-array
+        let occurence = keyButtons.reduce((occurence, key, i) =>{
+          // if correct letter is chosen, select correct letter, and return it to occurence
+          if (key === letter) {
+            occurence.push(i);
+          }
+          return occurence;
+        }, []);
 
 
 }
-showMatchedLetter(){
+// matches the selected letter to the letter in the phrase
+showMatchedLetter(event){
 
 }
 }

@@ -1,9 +1,11 @@
 //This Will Be Apps.js
+//variable that will eventually call new Game
+let app;
 
 //event listener for the start game button
 $("#btn__reset").on("click", (event)=>{
   //variable initializing the new Game object
-  const app = new Game;
+  app = new Game;
   // call resetDisplay
   resetDisplay();
   // Start game button
