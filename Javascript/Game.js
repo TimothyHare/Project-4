@@ -34,8 +34,16 @@ class Game {
   }
 
   handleInteraction(event){
-
-
+//johnny louifils helped me
+//if choosen letter is correct
+if (this.phrase.checkLetter(event) == true) {
+  //call matchedLetter method and checkForWin method
+  this.phrase.showMatchedLetter(event);
+  this.checkForWin();
+  // else call removeLife method.
+} else{
+  this.removeLife();
+}
   }
 
 //This methods removes a heart from the board, it removes a life, and will end the game when the player is out of lives.
