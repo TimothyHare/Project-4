@@ -15,6 +15,7 @@ $("#btn__reset").on("click", (event)=>{
 //hide screen overlay
 function resetDisplay(){
   $("#overlay").hide();
+  $("#phrase li").remove();
 }
 
 //markButton(): this function is called when a player selects a letter.
@@ -22,14 +23,8 @@ function resetDisplay(){
 function markButton( ){
   $("#qwerty button").on("click", (event) => {
 event.target.disabled = true;
-app.handleInteraction(event)
+if (event.target.tagName === "BUTTON")
+app.handleInteraction(event.target.innerHTML.toLowerCase());
 });
 }
-
-//Add event listeners to each of the keyboard buttons, so that clicking a button calls the markButton() function.
-$("#qwerty button").on("click", (event) => {
-  if (event.target.tagName === "BUTTON"){
-    markButton(event);
-
-  }
-});
+ markButton();

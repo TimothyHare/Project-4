@@ -84,12 +84,20 @@ this.gameOver()
     //variable that targets the overlay
     const overlay = $("#overlay")
 
-    if (this.missed < 5) {
+
+    if (this.checkLetter === true) {
       endMess.text("Victory Is Yours");
       overlay.show();
+      $("#btn__reset").text("Another One").click( function (){
+        location.reload();
+      });
     } else if (this.missed === 5) {
       endMess.text("Better Luck Next Time, Champ");
       overlay.show().addClass("lose")
+      $("#btn__reset").text("One More Time").click(function (){
+        location.reload();
+      });
+
       }
 
 

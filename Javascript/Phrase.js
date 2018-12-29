@@ -51,6 +51,19 @@ checkLetter(event) {
 }
 // matches the selected letter to the letter in the phrase
 showMatchedLetter(event){
-
+  //variable to call checkLetter method
+  let occurrence = this.checkLetter(event)
+  //put the letters into an array
+const phraseLetters = Array.from(document.getElementById("phrase").firstElementChild.children);
+//loop over letters on the board
+phraseLetter.forEach((key, i) =>{
+  //loop over letters that match letters on the board
+  occurence.forEach(occur => {
+  // if letters selected are the right ones show them.
+    if (occur === i) {
+      key.classlist = "show letter"
+    }
+  });
+});
 }
 }
