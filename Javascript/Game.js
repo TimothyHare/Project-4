@@ -16,6 +16,13 @@ class Game {
     this.phrase = this.createPhrase();
   }
 
+  getRandomPhrase() {
+    //selects random phrase from phrases property
+    const randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
+    return randomPhrase.split('');
+
+  }
+
 // cretaes phrases for use in game
   createPhrase() {
     //generates random phrase for player to guess
@@ -26,19 +33,14 @@ class Game {
 
   }
 
-  getRandomPhrase() {
-    //selects random phrase from phrases property
-    const randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
-    return randomPhrase.split('');
 
-  }
-
-  handleInteraction(event){
+handleInteraction(letter){
+console.log(letter)
 //johnny louifils helped me
 //if choosen letter is correct
-if (this.phrase.checkLetter(event) == true) {
+if (this.phrase.checkLetter(letter) === true) {
   //call matchedLetter method and checkForWin method
-  this.phrase.showMatchedLetter(event);
+  this.phrase.showMatchedLetter(letter);
   this.checkForWin();
   // else call removeLife method.
 } else{
@@ -66,7 +68,7 @@ if (this.phrase.checkLetter(event) == true) {
   //this methods checks to see if the correct letters are chosen.
   // credit: johnny louifils helped me design this
   checkForWin() {
-// variable that targets pharse lenght
+// variable that targets phrase lenght
 const phraseLength = $("div, ul, li. letter").length;
 //variable that targets the matching letters in the phrase
 const phraseMatch = $("div ul li. match").length;

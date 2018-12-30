@@ -2,6 +2,20 @@
 //variable that will eventually call new Game
 let app;
 
+//hide screen overlay
+function resetDisplay(){
+  $("#overlay").hide();
+  $("#phrase li").remove();
+}
+//markButton for when player selects a letter
+function markButton(event){
+//  $("#qwerty button").on("click", (event) => {
+event.target.disabled = true;
+event.target.classList.add ("chosen")
+// if (event.target.tagName === "BUTTON")
+app.handleInteraction(event.target.innerHTML.toLowerCase());
+}
+
 //event listener for the start game button
 $("#btn__reset").on("click", (event)=>{
   //variable initializing the new Game object
@@ -12,19 +26,9 @@ $("#btn__reset").on("click", (event)=>{
   app.startGame();
 });
 
-//hide screen overlay
-function resetDisplay(){
-  $("#overlay").hide();
-  $("#phrase li").remove();
-}
+
 
 //markButton(): this function is called when a player selects a letter.
-//It disables the button on the onscreen keyboard and calls the handleInteraction() method of the Game class.
-function markButton( ){
-  $("#qwerty button").on("click", (event) => {
-event.target.disabled = true;
-if (event.target.tagName === "BUTTON")
-app.handleInteraction(event.target.innerHTML.toLowerCase());
+$("#qwerty button").on("click", (event) => {
+  markButton(event);
 });
-}
- markButton();

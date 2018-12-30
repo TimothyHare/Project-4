@@ -1,4 +1,5 @@
 //This Will Be Phrase.js
+//I struggled with this greatly but johnny loufils helped me with everything
 
 //Class with constructor that accepts a Phrase
 class Phrase {
@@ -9,61 +10,48 @@ class Phrase {
   //Adds letter placeholder to display when game begins
 addPhraseToDisplay(){
   //displays board for game
-const keyBoard = document.getElementById("phrase");
+const keyBoard = document.querySelector("#phrase ul");
 // Variable for the letter of the phrases
-const keyButtons = [...this.phrase];
+const keyButtons = this.phrase;
 // Array Iteration for the letters of the phrases
 keyButtons.forEach(key => {
   // create list item
   const li = document.createElement("li");
-  //if statement for key that belongs in a space
-  if (key === " ") {
-    li.className = "hide space";
-  // else hide the key
-}else{
-  li.className =`hide letter ${key}`;
-  li.textContent = key;
+//append the list item to unordered list
+keyBoard.appendChild(li);
+//set class and hide attribute
+li.setAttribute("class","hide");
+li.textContent = key;
+//if key isn't a blank space give it className letter
+if(key !== " "){
+  li.className = "letter";
+} else {
+  //if the above condition is not met then className hide space
+  li.className = "hide space";
 }
-// Append list item to unordered list on the keyBoard
-keyBoard.firstElementChild.appendChild(li);
+return key;
 });
 }
 //checkLetter(): checks to see if letter selected by player matches a letter in the phrase.
-checkLetter(event) {
-  //get letter from clicking
-  let letter;
-  if (event.type === "click") {
-    letter = event.target.textContext;
+checkLetter(letter) {
+  //variable for letter class that was created
+const letters = $(".letter")
+//variable the correct letter choice
+let correctLetter = false;
+//Letter Iteration
+letters.each((i, value) => {
+  //conditional to return check if the corect letter is true
+  if ($(value).text()=== letter){
+    correctLetter = true;
   }
-
-  // variable for phrase letters
-  const keyButtons = [...this.phrase]
-  // Credit: https://stackoverflow.com/questions/20798477/how-to-find-index-of-all-occurrences-of-element-in-array
-        let occurence = keyButtons.reduce((occurence, key, i) =>{
-          // if correct letter is chosen, select correct letter, and return it to occurence
-          if (key === letter) {
-            occurence.push(i);
-          }
-          return occurence;
-        }, []);
-
+});
+// return correctLetter as true or false
+return correctLetter
 
 }
+
 // matches the selected letter to the letter in the phrase
 showMatchedLetter(event){
-  //variable to call checkLetter method
-  let occurrence = this.checkLetter(event)
-  //put the letters into an array
-const phraseLetters = Array.from(document.getElementById("phrase").firstElementChild.children);
-//loop over letters on the board
-phraseLetter.forEach((key, i) =>{
-  //loop over letters that match letters on the board
-  occurence.forEach(occur => {
-  // if letters selected are the right ones show them.
-    if (occur === i) {
-      key.classlist = "show letter"
-    }
-  });
-});
+
 }
 }
