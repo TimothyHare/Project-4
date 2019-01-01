@@ -6,11 +6,11 @@ class Game {
     this.missed = 0;
     // array of phrases the game will be using
     this.phrases =  [
-    "Tales from The Crypt ",
-    "American Horror Story",
-    "Haunting of Hill House",
-    "Are You Afraid of the Dark",
-    "Happy Halloween"
+    "tales from the crypt ",
+    "american horror story",
+    "haunting of hill house",
+    "are you afraid of the dark",
+    "happy halloween"
     ];
     // phrase object that's currently in play
     this.phrase = this.createPhrase();
@@ -19,7 +19,7 @@ class Game {
   getRandomPhrase() {
     //selects random phrase from phrases property
     const randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
-    return randomPhrase.split('').toLowerCase();
+    return randomPhrase.split("");
 
   }
 
@@ -92,7 +92,7 @@ return true
       overlay.show();
       $("#btn__reset").text("Another One").click( function (){
         location.reload();
-      });
+      })
     } else if (this.missed === 5) {
       endMess.text("Better Luck Next Time, Champ");
       overlay.show().addClass("lose")
@@ -100,7 +100,7 @@ return true
         location.reload();
       });
       }
-    }
+    };
 
     startGame() {
       //Adds random phrase to display

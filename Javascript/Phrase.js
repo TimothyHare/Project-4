@@ -51,7 +51,7 @@ return correctLetter
 }
 
 // matches the selected letter to the letter in the phrase
-showMatchedLetter(event) {
+showMatchedLetter(letter) {
   // function to target each letter
 $(".letter").each(function() {
   //if statement to match letters on board
