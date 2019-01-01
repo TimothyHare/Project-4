@@ -41,7 +41,7 @@ let correctLetter = false;
 //Letter Iteration
 letters.each((i, value) => {
   //conditional to return check if the corect letter is true
-  if ($(value).text()=== letter){
+  if ($(value).text() === letter){
     correctLetter = true;
   }
 });
@@ -52,8 +52,11 @@ return correctLetter
 
 // matches the selected letter to the letter in the phrase
 showMatchedLetter(event) {
+  // function to target each letter
 $(".letter").each(function() {
+  //if statement to match letters on board
   if ($(this).text() === letter) {
+    //show letter on board
     $(this).addClass("show");
   }
 });
