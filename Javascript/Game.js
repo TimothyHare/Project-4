@@ -19,7 +19,7 @@ class Game {
   getRandomPhrase() {
     //selects random phrase from phrases property
     const randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
-    return randomPhrase.split('');
+    return randomPhrase.split('').toLowerCase();
 
   }
 
@@ -69,13 +69,13 @@ if (this.phrase.checkLetter(letter) === true) {
   // credit: johnny louifils helped me design this
   checkForWin() {
 // variable that targets phrase lenght
-const phraseLength = $("div, ul, li. letter").length;
+const phraseLength = $(".letter").length;
 //variable that targets the matching letters in the phrase
-const phraseMatch = $("div ul li. match").length;
+const phraseMatch = $(".letter.show").length;
 //if statement to check if the correct letters are chosen
 if ( phraseLength === phraseMatch) {
-  //if the if statement is met the game ends
-this.gameOver()
+  //if the if statement is met return true
+return true
 }
   }
 
@@ -99,10 +99,7 @@ this.gameOver()
       $("#btn__reset").text("One More Time").click(function (){
         location.reload();
       });
-
       }
-
-
     }
 
     startGame() {

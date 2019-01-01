@@ -51,7 +51,11 @@ return correctLetter
 }
 
 // matches the selected letter to the letter in the phrase
-showMatchedLetter(event){
-
+showMatchedLetter(event) {
+$(".letter").each(function() {
+  if ($(this).text() === letter) {
+    $(this).addClass("show");
+  }
+});
 }
 }
