@@ -45,6 +45,7 @@ if (this.phrase.checkLetter(letter) === true) {
   // else call removeLife method.
 } else{
   this.removeLife();
+  this.gameOver();
 }
   }
 
@@ -87,9 +88,9 @@ return true
     const overlay = $("#overlay")
 
 
-    if (this.checkLetter === true) {
+    if (this.checkForWin() === true) {
       endMess.text("Victory Is Yours");
-      overlay.show();
+      overlay.show().addClass("");
       $("#btn__reset").text("Another One").click( function (){
         location.reload();
       })
