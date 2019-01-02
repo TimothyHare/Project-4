@@ -45,8 +45,8 @@ if (this.phrase.checkLetter(letter) === true) {
   // else call removeLife method.
 } else{
   this.removeLife();
-  this.gameOver();
 }
+this.gameOver();
   }
 
 //This methods removes a heart from the board, it removes a life, and will end the game when the player is out of lives.
@@ -90,7 +90,7 @@ return true
 
     if (this.checkForWin() === true) {
       endMess.text("Victory Is Yours");
-      overlay.show().addClass("");
+      overlay.show().addClass("win");
       $("#btn__reset").text("Another One").click( function (){
         location.reload();
       })
